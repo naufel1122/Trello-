@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Trello App</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
     <header>
@@ -14,34 +16,57 @@
     </header>
 
 
-    <main class="App-main" id="App-main" >
-        <div class="column" id="todo">
+    <main class="App-main" id="App-main">
+        <div class="column" id="Todo">
             <div class="head">Todo</div>
-            <form>
+            <div class="ticket" draggable="true">task 1</div>
+            <div class="ticket" draggable="true">task 2</div>
+            <div class="ticket" draggable="true">task 3</div>
+
+            <form class="addTicketForm">
                 <input type="text" id="Todo" name="TicketText" placeholder="Enter Your Task"><br>
-                <button class="btn" onclick="generate()" type="submit">Submit</button>
-                <button class="btn" onclick="remove()" type="submit">Remove</button>
-
+                <button class="btn" onclick="generate()" type="submit" hidden>Submit</button>
             </form>
-            <ul id="item">
-                <li>Hello</li>
-            </ul>
-
-            
         </div>
         <!-- ====== -->
         <div class="column" id="In-Process">
             <div class="head">In Process</div>
-            
-            <div class="Ticket"  draggable="true"></div>
+
+            <div class="Ticket" draggable="true">Task 4</div>
             <form>
                 <input type="text" id="Todo" name="TicketText" placeholder="Enter Your Task"><br>
-                <button class="btn" onclick="generate()" type="submit">Submit</button>
-                <button class="btn" onclick="remove()" type="submit">Remove</button>
+                <button class="btn" onclick="generate()" type="submit" hidden>Submit</button>
             </form>
         </div>
     </main>
 
-<script src="./app.js"></script>
+    <!-- <script>
+        let existingTicketObj = localStorage.getItem("ticket");
+
+        if (existingTicketObj) {
+            existingTicketObj = JSON.parse(existingTicketObj);
+        } else {
+            existingTicketObj = {};
+        }
+
+        let renderExistingTickets = () => {
+            for (key in existingTicketObj) {
+                console.log("key :", key);
+                console.log(existingTicketObj[key]);
+                existingTicketObj[key].forEach((eachTicket,index)=>{
+                    let ticketdiv = document.createElement("div")
+                    ticketDiv.setAttribute("draggable", "true")
+                    ticketDiv.setAttribute("class", "ticket")
+                })
+            }
+        }
+
+
+
+
+
+    </script> -->
+    <script src="./app.js"></script>
 </body>
+
 </html>
