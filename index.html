@@ -11,61 +11,38 @@
 
 <body>
 
-    <header>
-        <h1>Trello</h1>
+    <header class="app-header">
+        <h1>Trello clone</h1>
     </header>
 
-
-    <main class="App-main" id="App-main">
+    <main class="app-main" id="app-main">
         <div class="column" id="Todo">
-            <div class="head">Todo</div>
+            <h1>TODO</h1>
             <div class="ticket" draggable="true">task 1</div>
             <div class="ticket" draggable="true">task 2</div>
             <div class="ticket" draggable="true">task 3</div>
 
             <form class="addTicketForm">
-                <input type="text" id="Todo" name="TicketText" placeholder="Enter Your Task"><br>
-                <button class="btn" onclick="generate()" type="submit" hidden>Submit</button>
+                <input name="ticketText" type="text" placeholder="enter your task here">
+                <button type="submit" hidden>submit</button>
             </form>
         </div>
-        <!-- ====== -->
-        <div class="column" id="In-Process">
-            <div class="head">In Process</div>
 
-            <div class="Ticket" draggable="true">Task 4</div>
-            <form>
-                <input type="text" id="Todo" name="TicketText" placeholder="Enter Your Task"><br>
-                <button class="btn" onclick="generate()" type="submit" hidden>Submit</button>
+        <div class="column" id="in progress">
+            <h1>IN PROGRESS</h1>
+            <!-- <div class="column-heading">in progress</div> -->
+            <div class="ticket" draggable="true">task 4</div>
+
+            <form class="addTicketForm">
+                <input name="ticketText" type="text" placeholder="enter your task here">
+                <button type="submit" hidden>submit</button>
             </form>
         </div>
+
     </main>
 
-    <!-- <script>
-        let existingTicketObj = localStorage.getItem("ticket");
 
-        if (existingTicketObj) {
-            existingTicketObj = JSON.parse(existingTicketObj);
-        } else {
-            existingTicketObj = {};
-        }
-
-        let renderExistingTickets = () => {
-            for (key in existingTicketObj) {
-                console.log("key :", key);
-                console.log(existingTicketObj[key]);
-                existingTicketObj[key].forEach((eachTicket,index)=>{
-                    let ticketdiv = document.createElement("div")
-                    ticketDiv.setAttribute("draggable", "true")
-                    ticketDiv.setAttribute("class", "ticket")
-                })
-            }
-        }
-
-
-
-
-
-    </script> -->
+ 
     <script src="./app.js"></script>
 </body>
 
